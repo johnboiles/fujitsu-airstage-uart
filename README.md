@@ -2,6 +2,8 @@
 
 This repository explores the Fujitsu Airstage AMUH24KUAS UART protocol that is normally used by the UTY-TFSXJ4 Wi-Fi adapter. Using Saleae captures from a real adapter, we reverse-engineered the packet framing and a number of register-level interactions. The project provides a standalone C++ library for parsing/constructing packets and a command-line tool for dumping human-readable traces from Saleae CSV exports.
 
+NOTE: TX/RX are swapped in the captures!
+
 ## Packet Format Summary
 
 * **Break** — The bus idles with `0xFF 0xFF 0x00 0x00`. The decoder treats this as a frame of type `Break`.
